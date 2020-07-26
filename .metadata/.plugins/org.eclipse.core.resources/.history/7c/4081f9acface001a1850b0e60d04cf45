@@ -1,0 +1,19 @@
+package yxh.demo;
+import java.io.IOException;
+import java.util.Scanner;
+public class Demo1 {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		System.out.println("请输入秒数:");
+		String text=input.nextLine();
+		System.out.println("你输入的是:"+text);
+		//自动关机
+		//Runtime.getRuntime().exec("shutdown -s -t 1000");
+		//取消自动关机
+		Runtime.getRuntime().exec("shutdown -a");
+		Scanner input=new Scanner(System.in);
+		
+	}
+
+}

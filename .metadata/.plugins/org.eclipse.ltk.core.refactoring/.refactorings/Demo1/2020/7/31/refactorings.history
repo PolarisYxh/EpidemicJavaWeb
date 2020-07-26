@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Demo1/src/yxh/demo/帮助文档&apos; to &apos;帮助文档.txt&apos;" description="Rename resource &apos;帮助文档&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/yxh/demo/帮助文档" name="帮助文档.txt" stamp="1595733511393" updateReferences="true"/>
+</session>

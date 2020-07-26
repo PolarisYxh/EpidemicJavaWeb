@@ -1,0 +1,83 @@
+package yxh.demo;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+public class Demo1 {
+	    public static long midTime;
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		Scanner input=new Scanner(System.in);
+		System.out.println("请输入秒数:");
+		String text=input.nextLine();
+		System.out.println("你输入的是:"+text);
+		//自动关机
+		Runtime.getRuntime().exec("shutdown -s -t "+text);
+		//取消自动关机
+		//Runtime.getRuntime().exec("shutdown -a");
+	
+        midTime = Long.parseLong( text );;
+        
+        // time1();//方式一
+        time2();// 方式二
+        // time3();//方式三
+	}
+	/**
+     * 方式三： 使用java.util.Timer类进行倒计时
+     */
+    private static void time3() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
+                midTime--;
+                long hh = midTime / 60 / 60 % 60;
+                long mm = midTime / 60 % 60;
+                long ss = midTime % 60;
+                System.out.println("还剩" + hh + "小时" + mm + "分钟" + ss + "秒");
+            }
+        }, 0, 1000);
+    }
+
+    /**
+     * 方式二： 设定时间戳，倒计时
+     */
+    private static void time2() {
+
+        while (midTime > 0) {
+            midTime--;
+            long hh = midTime / 60 / 60 % 60;
+            long mm = midTime / 60 % 60;
+            long ss = midTime % 60;
+            System.out.println("还剩" + hh + "小时" + mm + "分钟" + ss + "秒");
+            try {
+                Thread.sleep(1000);
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 方式一： 给定时长倒计时
+     */
+    private static void time1() {
+        while (time > 0) {
+            time--;
+            try {
+                Thread.sleep(1000);
+                int hh = time / 60 / 60 % 60;
+                int mm = time / 60 % 60;
+                int ss = time % 60;
+                System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");//清空控制台
+                System.out.println("还剩" + hh + "小时" + mm + "分钟" + ss + "秒");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,13 @@
+package yxh.demo;
+import java.io.IOException;
+public class Demo1 {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		//自动关机
+		Runtime.getRuntime().exec("shutdown -s -t 1000");
+		//取消自动关机
+		//Runtime.getRuntime().exec("shutdown -a");
+	}
+
+}
